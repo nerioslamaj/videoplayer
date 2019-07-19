@@ -1,13 +1,15 @@
 {
-  "name": "zava10",
+  "name": "videoplayer",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit --watch"
   },
   "dependencies": {
+    "@vue/cli-plugin-unit-jest": "^3.9.0",
     "core-js": "^2.6.5",
     "vue": "^2.6.10"
   },
@@ -16,8 +18,11 @@
     "@vue/cli-plugin-eslint": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
     "babel-eslint": "^10.0.1",
+    "babel-jest": "^24.8.0",
     "eslint": "^5.16.0",
     "eslint-plugin-vue": "^5.0.0",
+    "sass": "^1.22.7",
+    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.6.10"
   },
   "eslintConfig": {
@@ -42,5 +47,24 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
+    "transform": {
+      ".*\\.(vue)$": "vue-jest",
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest"
+    },
+    "moduleNameMapper": {
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ]
+  }
 }

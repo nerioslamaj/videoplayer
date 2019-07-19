@@ -1,4 +1,4 @@
-# zava10
+# videoPlayer
 
 ## Project setup
 ```
