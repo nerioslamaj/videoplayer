@@ -1,13 +1,14 @@
-// VARIABLES
+/////// VARIABLES
 $black: #000;
-$dark: #111;
+$dark: #0f0f0f;
 $white: #fff;
-$light: #f1f1f1;
-$gray1: #444;
-$gray2: #777;
-$gray3: #aaa;
+$light: #eee;
+$gray1: #181818;
+$gray2: #1e1e1e;
+$gray3: #333;
+$gray4: #999;
 
-// GENERAL
+/////// GENERAL
 * {
     box-sizing: border-box;
     &:focus {
@@ -26,7 +27,7 @@ ul {
     }
 }
 
-// FONT PALETTE
+/////// FONT PALETTE
 h1 {
   font: normal 36px/1.2 Helvetica, Arial, sans-serif;
   color: $white;
@@ -39,31 +40,58 @@ h2 {
 }
 h3 {
   font: normal 26px/1.2 Helvetica, Arial, sans-serif;
-  color: $white;
+  color: $light;
   margin: 0 0 8px 0;
 }
 h4 {
   font: normal 22px/1.2 Helvetica, Arial, sans-serif;
-  color: $white;
+  color: $light;
   margin: 0 0 6px 0;
 }
 h5 {
   font: normal 18px/1.2 Helvetica, Arial, sans-serif;
-  color: $white;
+  color: $light;
   margin: 0 0 4px 0;
 }
 p {
   font: normal 16px/1.2 Helvetica, Arial, sans-serif;
-  color: $white;
+  color: $light;
   margin: 0;
 }
 a {
   font: normal 16px/1.2 Helvetica, Arial, sans-serif;
-  color: $white;
+  color: $light;
   margin: 0;
 }
-span {
-  font: normal 16px/1.2 Helvetica, Arial, sans-serif;
-  color: $white;
-  margin: 0;
+
+/////// GLOBAL STYLES
+.blockTitle {
+  margin-bottom: 48px;
+  h1 {
+    display: inline-block;
+    margin: 0 12px 0 0;
+  }
+  i {
+    vertical-align: text-bottom;
+    margin-left: 16px;
+  }
+}
+i.zmdi {
+  &.round{
+    height: 36px;
+    width: 36px;
+    background-color: $white;
+    border-radius: 50%;
+    font-size: 24px;
+    padding: 6px 10px;
+    box-shadow: 0;
+    transition: all 0.1s;
+    &:hover {
+      cursor: pointer;
+      box-shadow: 0 2px 10px $black;
+      background-color: $light;
+      transform: scale(1.1);
+      transition: all 0.1s;
+    }
+  }
 }

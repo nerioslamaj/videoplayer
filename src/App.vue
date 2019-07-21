@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <videoViewComponent v-bind:videoUrl="selectedVideo"></videoViewComponent>
+    <videoViewComponent v-bind:key="currentVideo.video.id" v-bind:currentVideoIndex="currentVideo.index" v-bind:videoToBePlayed="currentVideo.video"></videoViewComponent>
     <div class="listContainer">
       <playlistsComponent v-bind:allPlaylists="playlists"></playlistsComponent>
       <videoListComponent v-bind:allVideos="videos"></videoListComponent>
@@ -20,31 +20,25 @@ export default {
     videoListComponent,
     playlistsComponent,
   },
-  data: function () {
-    return {
-      selectedVideo: null,
-      selectedPlaylist: null,
-      playlists: [ 'Cartoon', 'Music' ],
-      videos: [
-        {
-          artist: 'Big Buck Bunny',
-          title: 'In the woods',
-          playlist: 'Cartoon',
-          url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
-        },
-        {
-          artist: 'Big Buck Bunny',
-          title: 'In the woods',
-          playlist: 'Cartoon',
-          url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
-        }
-      ]
+  computed: {
+    videos () {
+      let changedPlaylist = this.$store.state.currentPlaylist;
+      return this.$store.state.videos.filter(x => {
+        return changedPlaylist == x.playlist;
+      });
+    },
+    playlists () {
+      return this.$store.state.playlists
+    },
+    currentVideo () {
+      let currentVideoId = this.$store.state.currentVideoId;
+      let currentVideoIndex= null;
+      return {video: this.$store.state.videos.find((x, i) => {
+        currentVideoIndex = i;
+        return currentVideoId == x.id;
+      }), index: currentVideoIndex}
     }
-  },
-  mounted: function () {
-    this.selectedVideo = this.videos[0].url;
-    this.selectedPlaylist = null;
-  },
+  }
 }
 </script>
 
