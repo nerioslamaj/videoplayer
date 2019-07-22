@@ -1,11 +1,12 @@
 <template>
   <div class="playlistComponent">
+    <addPlaylistComponent v-bind:showPlaylistPopup.sync="showPopup"></addPlaylistComponent>
     <div class="blockTitle">
       <h1>Playlists</h1>
-      <i class="zmdi zmdi-plus round"></i>
+      <i v-on:click="revertPopup" class="zmdi zmdi-plus round"></i>
     </div>
     <ul>
-      <li v-on:click="switchPlaylist(index)" v-for="(item, index) in allPlaylists" v-bind:key="index"  v-bind:class="{ activePlaylist: item == currentPlaylist }">
+      <li v-on:click="switchPlaylist(index)" v-for="(item, index) in allPlaylists" v-bind:key="index" v-bind:class="{ activePlaylist: item == currentPlaylist }">
         <h4>{{ item }}</h4>
         <p>Playlist {{ index + 1 }}</p>
       </li>
@@ -14,8 +15,18 @@
 </template>
 
 <script>
+import addPlaylistComponent from './addPlaylistComponent.vue'
+
 export default {
   name: 'playlistComponent',
+  components: {
+    addPlaylistComponent
+  },
+  data() {
+    return {
+      showPopup: false
+    }
+  },
   props: {
     allPlaylists: Array
   },
@@ -29,6 +40,9 @@ export default {
       this.$store.dispatch('switchPlaylist', index).catch(err => {
         this.error = err
       })
+    },
+    revertPopup () {
+      this.showPopup = true;
     }
   }
 }

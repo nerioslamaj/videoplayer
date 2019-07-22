@@ -19,14 +19,14 @@ export default new Vuex.Store({
         artist: 'Reuben Wu',
         title: 'Icebergs',
         playlist: 'Electronic',
-        url: 'https://scontent.cdninstagram.com/vp/2112e19c09d2ce5e324b7359dd798f77/5D352B4F/t50.2886-16/64961145_1061136724076325_790753155131653543_n.mp4?_nc_ht=scontent.cdninstagram.com'
+        url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
       },
       {
         id: 3,
         artist: 'NL',
         title: 'Kakome Beach',
         playlist: 'Electronic',
-        url: 'https://scontent.cdninstagram.com/vp/a02b3eede4209b78d65f83262709bb0c/5D358402/t50.2886-16/18277029_1908422776113886_5876934734734426112_n.mp4?_nc_ht=scontent.cdninstagram.com'
+        url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
       },
       {
         id: 4,
@@ -57,6 +57,18 @@ export default new Vuex.Store({
     },
     SELECT_VIDEO (state, id) {
       state.currentVideoId = id
+    },
+    ADD_NEW_PLAYLIST (state, name) {
+      state.playlists.push(name);
+    },
+    ADD_NEW_VIDEO (state, data) {
+      state.videos.push({
+        id: state.videos[state.videos.length-1].id + 1,
+        artist: data.artist,
+        title: data.title,
+        playlist: state.currentPlaylist,
+        url: data.url
+      });
     }
   },
   
@@ -66,6 +78,12 @@ export default new Vuex.Store({
     },
     async switchVideo ({ commit }, id) {
       commit('SELECT_VIDEO', id)
+    },
+    async addNewPlaylist ({ commit }, name) {
+      commit('ADD_NEW_PLAYLIST', name)
+    },
+    async addNewVideo ({ commit }, data) {
+      commit('ADD_NEW_VIDEO', data)
     }
   }
 });
