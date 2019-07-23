@@ -46,6 +46,7 @@ export default {
   left: 0;
 }
 .addVideoComponent {
+  width: 220px;
   background-color: $gray3;
   z-index: 2;
   position: fixed;
@@ -53,5 +54,16 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
+  form {
+    input {
+      width: 100%;
+      display: block;
+      margin-bottom: 12px;
+    }
+    button {
+      width: 100%;
+      display: block;
+    }
+  }
 }
 </style>

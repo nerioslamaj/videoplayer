@@ -5,46 +5,46 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    playlists: [ 'Electronic', 'Radio' ],
+    playlists: [ 'Movies', 'Random' ],
     videos: [
       {
         id: 1,
-        artist: 'Chopin',
-        title: 'Nocturne',
-        playlist: 'Radio',
-        url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
+        artist: 'Toy Story',
+        title: 'Trailer',
+        playlist: 'Movies',
+        url: 'http://www.html5videoplayer.net/videos/toystory.mp4'
       },
       {
         id: 2,
-        artist: 'Reuben Wu',
-        title: 'Icebergs',
-        playlist: 'Electronic',
+        artist: 'Big Buck Bunny',
+        title: 'In the woods',
+        playlist: 'Movies',
         url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
       },
       {
         id: 3,
-        artist: 'NL',
-        title: 'Kakome Beach',
-        playlist: 'Electronic',
-        url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
+        artist: 'New Amsterdam',
+        title: 'Series',
+        playlist: 'Movies',
+        url: 'http://fr.vid.web.acsta.net/nmedia/33/18/05/13/20/19578396_hd_013.mp4'
       },
       {
         id: 4,
         artist: 'Big Buck Bunny',
         title: 'In the woods',
-        playlist: 'Electronic',
+        playlist: 'Random',
         url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
       },
       {
         id: 5,
-        artist: 'Big Buck Bunny',
-        title: 'In the woods',
-        playlist: 'Radio',
-        url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
+        artist: 'New Amsterdam',
+        title: 'Series',
+        playlist: 'Random',
+        url: 'http://fr.vid.web.acsta.net/nmedia/33/18/05/13/20/19578396_hd_013.mp4'
       }
     ],
-    currentPlaylist: 'Electronic',
-    currentVideoId: 3
+    currentPlaylist: 'Movies',
+    currentVideoId: 1
   },
   
   getters: {

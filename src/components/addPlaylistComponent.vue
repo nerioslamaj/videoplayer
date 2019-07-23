@@ -40,6 +40,7 @@ export default {
   left: 0;
 }
 .addPlaylistComponent {
+  width: 220px;
   background-color: $gray3;
   z-index: 2;
   position: fixed;
@@ -47,5 +48,16 @@ export default {
   left: 50%;
   transform: translate(-50%, -50%);
   padding: 30px;
+  form {
+    input {
+      display: block;
+      margin-bottom: 12px;
+      width: 100%;
+    }
+    button {
+      display: block;
+      width: 100%;
+    }
+  }
 }
 </style>
