@@ -5,45 +5,59 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    playlists: [ 'Movies', 'Random' ],
+    playlists: [ 'Fun Playlist', 'Random' ],
     videos: [
       {
         id: 1,
-        artist: 'Toy Story',
-        title: 'Trailer',
-        playlist: 'Movies',
-        url: 'http://www.html5videoplayer.net/videos/toystory.mp4'
+        artist: 'Blender Foundation',
+        title: 'Tears of Steel',
+        playlist: 'Random',
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4'
       },
       {
         id: 2,
-        artist: 'Big Buck Bunny',
-        title: 'In the woods',
-        playlist: 'Movies',
-        url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
+        artist: 'Blender Foundation',
+        title: 'Big Buck Bunny',
+        playlist: 'Fun Playlist',
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
       },
       {
         id: 3,
-        artist: 'New Amsterdam',
-        title: 'Series',
-        playlist: 'Movies',
-        url: 'http://fr.vid.web.acsta.net/nmedia/33/18/05/13/20/19578396_hd_013.mp4'
+        artist: 'Blender Foundation',
+        title: 'Elephant\'s Dream',
+        playlist: 'Fun Playlist',
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4'
       },
       {
         id: 4,
-        artist: 'Big Buck Bunny',
-        title: 'In the woods',
-        playlist: 'Random',
-        url: 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4'
+        artist: 'Chromecast',
+        title: 'Elephant\'s Dream',
+        playlist: 'Fun Playlist',
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4'
       },
       {
         id: 5,
-        artist: 'New Amsterdam',
-        title: 'Series',
+        artist: 'Google',
+        title: 'For Big Blazes',
+        playlist: 'Fun Playlist',
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
+      },
+      {
+        id: 6,
+        artist: 'Google',
+        title: 'For Bigger Escapes',
         playlist: 'Random',
-        url: 'http://fr.vid.web.acsta.net/nmedia/33/18/05/13/20/19578396_hd_013.mp4'
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4'
+      },
+      {
+        id: 7,
+        artist: 'Chromecast',
+        title: 'For Bigger Joyrides',
+        playlist: 'Random',
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerJoyrides.mp4'
       }
     ],
-    currentPlaylist: 'Movies',
+    currentPlaylist: 'Fun Playlist',
     currentVideoId: 1
   },
   
