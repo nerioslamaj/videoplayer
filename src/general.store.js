@@ -9,10 +9,10 @@ export default new Vuex.Store({
     videos: [
       {
         id: 1,
-        artist: 'Google',
-        title: 'For Big Blazes',
-        playlist: 'Fun Playlist',
-        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
+        artist: 'Blender Foundation',
+        title: 'Tears of Steel',
+        playlist: 'Random',
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4'
       },
       {
         id: 2,
@@ -37,10 +37,10 @@ export default new Vuex.Store({
       },
       {
         id: 5,
-        artist: 'Blender Foundation',
-        title: 'Tears of Steel',
-        playlist: 'Random',
-        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4'
+        artist: 'Google',
+        title: 'For Big Blazes',
+        playlist: 'Fun Playlist',
+        url: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4'
       },
       {
         id: 6,
